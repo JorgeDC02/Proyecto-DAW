@@ -1,0 +1,26 @@
+{% if is_granted('ROLE_ADMIN') %}
+    <a class="btn btn-primary" href="{{ path('app_adm_index') }}">Panel administrador</a>
+{% endif %}
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+    <a class="btn btn-success" href="{{ path('fos_user_security_logout') }}">Sign out</a>
+    <a class="btn btn-danger" href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a>
+
+    {{ render(controller('AppBundle:Carrito:cuentaPedido')) }}
+
+{% elseif route != 'fos_user_security_login' and route != 'fos_user_registration_register' %}
+     <form action="{{ path("fos_user_security_check") }}" method="post" class="form-acceso">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        <div class="form-group">
+            <input class="form-control" placeholder="Username" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+        </div>
+        <div class="form-group">
+            <input class="form-control" placeholder="Password" type="password" id="password" name="_password" required="required" />
+        </div>
+        <button type="submit" class="btn btn-success">Sign in</button>
+        <a class="btn btn-danger" href="{{ path('fos_user_registration_register') }}">Sign up</a>
+         <div class="carrito-header"><a href="#">Carrito <input type="text" class="form-control carrito" value="0" disabled></a></div>
+    </form>
+
+
+
+{% endif %}

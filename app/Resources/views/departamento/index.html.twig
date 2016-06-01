@@ -1,0 +1,30 @@
+{% extends ':index/empleado:index.html.twig' %}
+
+{% block div %}
+    <div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Id</th><th>Código departamento</th><th>Departamento</th>
+        </tr>
+        </thead>
+        <tbody align="center">
+        {% for departamento in departamentos %}
+            <tr>
+                <td>{{ departamento.id }}</td>
+                <td>{{ departamento.nDepartamento }}</td>
+                <td>{{ departamento.nombre }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+        <div style="margin-top:10px">
+            <a href="{{ path('app_departamento_insert') }}">Añadir departamento</a>
+        </div>
+
+        {#{% else %}#}
+        <!--<h2>Acceso restringido</h2>-->
+        {#{% endif %}#}
+
+{% endblock %}

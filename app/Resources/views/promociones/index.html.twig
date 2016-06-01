@@ -1,0 +1,26 @@
+{% extends ':index/empleado:index.html.twig' %}
+{% block div %}
+    <div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+        <th>Id</th><th>Id del producto</th><th>Precio</th><th>Descuento (%)</th><th colspan="2">Modificar promocion</th>
+        </tr>
+        </thead>
+        <tbody align="center">
+
+        {% for promocion in promociones %}
+            <tr>
+                <td>{{ promocion.id }}</td>
+                <td>{{ promocion.produ }}</td>
+                <td>{{ promocion.precio }}</td>
+                <td>{{ promocion.descuentoPorc }}</td>
+                <td><a href="{{ path('app_promocion_modificar', {'id':promocion.id}) }}">Actualizar</a></td>
+                <td><a href="#">Eliminar</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <a href="{{ path('app_insertar_promo') }}">Añadir promocion</a>
+{% endblock %}

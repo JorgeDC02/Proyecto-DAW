@@ -1,0 +1,23 @@
+
+
+    {% for comment in comentario %}
+        <div class="container">
+            <!--<div class="row">-->
+
+            <!--</div>-->
+            <div class="col-xs-6 col-mascomm-slider">
+                <img src="images/upload/{{ comment.imageName }}" class="imagen-portada-masComentado"/>
+            </div>
+
+            <div class="col-xs-6 col-mascomm-cont">
+                <p>
+                    <a href="{{ path('app_producto_especificacion', {'id' : comment.id}) }}">
+                        <h5>{{ comment.tipoProducto }} {{ comment.nMarca }} {{ comment.modelo }} </h5>
+                    </a>
+                </p>
+                <span class="comentario-mascomm">{{ comment.totproducto }} comentarios</span>
+            </div>
+        </div>
+
+    {% endfor %}
+

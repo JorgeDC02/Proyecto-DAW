@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <div class="panel panel-default">
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Producto</th><th>Imagen</th><th>Marca</th><th>Modelo</th><th>Precio</th><th>Modificar</th>
+                </tr>
+                </thead>
+                <tbody align="center">
+
+                {% for producto in productos %}
+                    <tr>
+                        <td><img src=" images/upload/{{ producto.imageName }}" width="120"></td>
+                        <td>{{ producto.tipoProducto }}</td>
+                        <td>{{ producto.nMarca }}</td>
+                        <td>{{ producto.modelo }}</td>
+                        <td class="precio-producto-carrito">{{ producto.precio }}</td>
+                        <td><a href="{{ path('app_remove_product_list', {'id': producto.carrito_id}) }}"><button class="btn btn-warning">Eliminar</button></a> </td>
+                    </tr>
+                {% endfor %}
+                <!--<tr>
+                    <td colspan="5" ><button class="btn btn-danger">Vaciar carrito</button></td>
+                </tr>-->
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+        <div class="panel-footer">
+
+                <a href="{{ path('app_index_web') }}"> <button class="btn btn-primary">Seguir comprando</button></a>
+                <a href="{{ path('app_vaciar_lista') }}"> <button class="btn btn-danger" >Vaciar carrito</button></a>
+            <div class="cont-precio-carrito">
+                Coste total: <input type="text" class="precio-lista form-control" disabled>
+                 <a href="{{ path('app_carrito_comprar') }}"> <button class="btn btn-success">Comprar</button></a>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

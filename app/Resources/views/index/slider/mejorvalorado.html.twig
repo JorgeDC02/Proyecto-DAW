@@ -1,0 +1,20 @@
+
+
+{% for v in voto %}
+    <div class="container">
+        <div class="col-xs-6 imagen-masvalorado">
+            <img src="images/upload/{{ v.imageName }}" class="imagen-portada-masvalorado"/>
+        </div>
+
+        <div class="col-xs-6 cont-masvalorado">
+            <p>
+                <a href="{{ path('app_producto_especificacion', {'id' : v.id}) }}">
+                        <h5>{{ v.tipoProducto }} {{ v.nMarca }} {{ v.modelo }} </h5>
+                </a>
+            </p>
+            <span class="comentario-mascomm">Valoracion de {{ v.valoracion }} puntos</span>
+        </div>
+    </div>
+
+{% endfor %}
+

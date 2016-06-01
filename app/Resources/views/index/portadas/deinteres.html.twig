@@ -1,0 +1,9 @@
+
+
+    <h4 class="titulo-portadas">Te podria interesar</h4>
+    {% for producto in productos %}
+        <div class="row"><a href="{{ path('app_producto_especificacion', {'id' : producto.id}) }}"><span id="novedad-marca">{{ producto.marcas }}</span> <span id="novedad-modelo">{{ producto.modelo }}</span></a></div>
+        <div class="row img-deinteres"><img src="images/upload/{{ producto.urlImagen }}"></div>
+    {% endfor %}
+
+

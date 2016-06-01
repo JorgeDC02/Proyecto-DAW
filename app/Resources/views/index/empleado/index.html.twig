@@ -1,0 +1,21 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/estilo-admin.css') }}">
+        {#% if is_granted('ROLE_ADMIN') %}#}
+        <div class="panel panel-default">
+                <div class="panel-heading" align="center">
+                        <a {% if app.request.get('_route') == 'app_producto_index' %} class="active btn btn-default" {% endif %} class="btn btn-default" href="{{ path('app_producto_index') }}">Productos</a>
+                        <a {% if app.request.get('_route') == 'app_departamento_index' %} class="active btn btn-default" {% endif %} class="btn btn-default" href="{{ path('app_departamento_index') }}">Departamentos</a>
+                        <a {% if app.request.get('_route') == 'app_marca_index' %} class="active btn btn-default" {% endif %} class="btn btn-default" href="{{ path('app_marca_index') }}">Marcas</a>
+                        <a {% if app.request.get('_route') == 'app_promocion_index' %} class="active btn btn-default" {% endif %} class="btn btn-default" href="{{ path('app_promocion_index') }}">Promociones</a>
+                        <a {% if app.request.get('_route') == 'app_index_empleado_index' %} class="active btn btn-default" {% endif %} class="btn btn-default" href="{{ path('app_index_empleado_index') }}">Novedades</a>
+                        <a {% if app.request.get('_route') == 'app_todosusuario_index' %} class="active btn btn-default" {% endif %} class="btn btn-default" href="{{ path('app_todosusuario_index') }}">Usuarios</a>
+                        <a {% if app.request.get('_route') == 'app_registro_compras' %} class="active btn btn-default" {% endif %} class="btn btn-default" href="{{ path('app_registro_compras') }}">Regisistro de compras</a>
+                </div>
+                <div class="panel-body">
+                        {% block div %}{% endblock %}
+                </div>
+        </div>
+{#{% endif %}#}
+{% endblock %}

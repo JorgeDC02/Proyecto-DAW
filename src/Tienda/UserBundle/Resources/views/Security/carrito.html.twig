@@ -1,0 +1,5 @@
+{% for pedido in pedidos %}
+    <div class="carrito-header">
+        <a href="{{ path('app_lista_carrito') }}">Carrito <input type="text" class="form-control carrito" value="{{ pedido.id }}" disabled></a>
+    </div>
+{% endfor %}

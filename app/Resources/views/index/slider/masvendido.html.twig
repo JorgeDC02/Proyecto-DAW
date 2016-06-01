@@ -1,0 +1,8 @@
+{% for p in compra %}
+    <div class="container imagen-mascomentado">
+        <!--<div class="col-sm-6 imagen-mascomentado">-->
+            <a href="{{ path('app_producto_especificacion', {'id' : p.id}) }}"><h5>{{ p.tipoProducto }} {{ p.nMarca }} {{ p.modelo }} </h5></a>
+            <p><img src="images/upload/{{ p.imageName }}" class="imagen-portada-mascomprado"/></p>
+       <!-- </div>-->
+    </div>
+{% endfor %}

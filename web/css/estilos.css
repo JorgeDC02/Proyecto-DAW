@@ -1,0 +1,111 @@
+*{margin: 0px; padding: 0px}
+
+/*td, th{border: 1px solid black; padding:2px 4px; text-align: center;}*/
+th{text-align: center;}
+
+
+/*Estilo de la cabecera*/
+.cabecera{margin-bottom: 0px; border-radius: 0px; background-color: #163F87; border-color: #1A6899;}
+a.logotipo{font-family: "Browalia New", Arial; font-weight: bold;}
+ul.redes-sociales{text-align: center;}
+ul.formulario{text-align: center;}
+
+li.redsocial{display: inline-block;}
+
+.navbar-inverse .navbar-nav>li>a.icon-fcb {  color: #8b9dc3;}
+.navbar-inverse .navbar-nav>li>a.icon-fcb:hover{color:#3b5998;}
+.navbar-inverse .navbar-nav>li>a.icon-twt{color:#c0deed;}
+.navbar-inverse .navbar-nav>li>a.icon-twt:hover{color:#0084b4;}
+.navbar-inverse .navbar-nav>li>a.icon-gpl{color:#f1f1f1;}
+.navbar-inverse .navbar-nav>li>a.icon-gpl:hover{color:#d34836;}
+
+.fa { font-size: 2em; }
+.form-acceso{}
+input#username{padding: 0px 6px;}
+input#password{padding: 0px 6px;}
+
+/*Estilo del menu*/
+.menu{border-radius: 0px; margin-bottom: 0px; background-color: #163F87; border-color: #1A6899;}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #5F5C5C;
+    color: #72716D;
+}
+ul.menu{font: bold 18px Georgia;}
+.estilo-buscar{display: inline-block; width: auto; }
+.menudesplegable{margin-left: 10px; float: left; border-color: #306199!important; padding: 7px 10px; margin-top: 4px; border: 1px solid transparent;}
+.navbar-form{margin-left: 0px; margin-right: 0px;}
+.navbar-form .campo-buscador{ width:450px;}
+.navbar-form .carrito{width: 50px; display: inline-block;}
+.carrito-header{background-color: #B1B1B1; display:inline-block; }
+
+/*Estilo del slider*/
+.carousel-control.left{background-color: #FBFBFB; opacity: 0px; background-image: none;}
+.carousel-control.right{background-color: #FBFBFB; opacity: 0px; background-image: none;}
+div.carrussel{}
+a.left, a.right{}
+h4{}
+div.item{text-align:center;}
+div.item > img{margin: 0px auto;}
+
+/*Estilo del bloque de contenido SLIDER*/
+.imagen-portada-masComentado{width: 50%;}
+.col-mascomm-slider{text-align: right;}
+.col-mascomm-cont{text-align: left; margin-top: 5px; margin-top: 10px;}
+.comentario-mascomm{padding: 8px 0px;}
+.imagen-masvalorado{text-align: right;}
+.cont-masvalorado{text-align: left;}
+.imagen-portada-masvalorado{padding-bottom: 8px; width: 50%;}
+.imagen-portada-mascomprado{width: 25%;}
+div.fila{text-align: center; border-bottom: 2px solid #3b5998;}
+
+div.caja1{border-top:1px solid #3b5998; border-right:1px solid #3b5998; border-left:1px solid #3b5998; padding-bottom: 7px; padding: 0px 0px;}
+div.caja2{border-top:1px solid #3b5998; border-right:1px solid #3b5998; padding: 0px 0px;}
+div.caja3{border-top:1px solid #3b5998; border-right:1px solid #3b5998; padding: 0px 0px;}
+
+.titulo-portadas{background-color: #1A6899; margin-top:0px; padding:2px 0px; }
+
+/*Estilo bloque Novedad*/
+div.img-novedad > img{width:50%;}
+.img-deinteres > img{width: 25%;}
+.enlace-all-nov{margin-top: 39px;}
+
+/*Estilo pagina Promocion Portada*/
+.img-promocion{padding: 18px 0px;}
+div.img-promocion > img{max-width:60%;}
+div.precioPromocionPortada{text-align: left;}
+div.precioOldPromocion{padding: 12px 0px;}
+span.descuentoPortada{font-size:22px;}
+span.precioUnderline{text-decoration: line-through;}
+span.precioFinalPromocion{font-size:22px;}
+
+
+/*Estilo página Novedad*/
+.titulo-noveda{text-align: center; background-color: #1A6899; margin: 0px; padding: 2px 0px;}
+.nov-cont-desc{text-align: center; margin-top: 15px;}
+.nov-cont-comp{margin-top: 15px;}
+div.estilo-filtro{border:1px dashed black;}
+div.estilo-contenido-novedades{border-bottom: 1px solid #3b5998; padding-bottom: 8px;}
+img.img-pg-novedad{width:50%;}
+
+/*Pagina especificaiones*/
+p.imagenEspecificacionMin > img{width: 100%;}
+p.imagenEspecificacion > img{width: 80%;}
+.col-detalles-producto{height:214px; overflow-y: scroll; background-color: #F7F9FC;}
+.espf-cont-img{background-color: #F7F9FC; margin-top: 10px;}
+
+
+/*Estilo para listado de productos*/
+.precio-lista{padding: 2px 0px; width: 150px; display: inline-block; text-align: center;}
+/*.form-control{width: 150px; display: inline-block}*/
+.cont-precio-carrito{display: inline; float: right;}
+
+/*Listado de productos*/
+.fila-spf-prod{border-bottom: 1px solid #3b5998;}
+.cont-listado{border-bottom: 1px solid #3b5998;}
+img.imagen-listado{/*width:120px;*/ width: 60%;}
+.col-comentario{height: 148px; overflow-y: scroll; background-color: #F7F9FC;}
+.col-descr, .col-precio{margin-top: 54px;}
+
+/*Comentarios*/
+.fila-comment{padding: 4px 8px; border-bottom: 1px solid #D8D9DA;}

@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <h1>Imagenes subidas</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>URL imagen</th><th>Archivo imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% for image in images %}
+            <tr>
+                <td>{{ image.imageName }}</td>
+                <td><img src="images/upload/{{ image.imageName }}" width="100px"></td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

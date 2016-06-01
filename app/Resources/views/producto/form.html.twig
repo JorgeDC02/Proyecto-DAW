@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <div>
+        <form method="post" action="{{ action }}" novalidate="novalidate">
+
+            <div>
+                {{ dump(form.vars.value) }}
+                <ul>
+                    {% for error in form.vars.value %}
+                        <li>{{ error.message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div>{{ form_label(form.depts) }}:{{ form_widget(form.depts) }}</div><!--Campo de la entidad Producto relacionado con Departamento-->
+            <div>{{ form_label(form.ref) }}:{{ form_widget(form.ref) }}</div>
+            <div>{{ form_label(form.precio) }}:{{ form_widget(form.precio) }}</div>
+            <div>{{ form_label(form.valoracion) }}:{{ form_widget(form.valoracion) }}</div>
+            <div>{{ form_label(form.marcas) }}:{{ form_widget(form.marcas) }}</div>
+            <div>{{ form_label(form.modelo) }}:{{ form_widget(form.modelo) }}</div>
+            <div>{{ form_label(form.tipoProducto) }}:{{ form_widget(form.tipoProducto) }}</div>
+            <div>{{ form_label(form.descripcion) }}:{{ form_widget(form.descripcion) }}</div>
+            <div>{{ form_label(form.novedad) }}:{{ form_widget(form.novedad) }}</div>
+            <div>{{ form_label(form.urlImagen) }}:{{ form_widget(form.urlImagen) }}</div>
+            <div><a target="_blank" value="Subir imagen" href="{{ path('app_index_upload') }}">Subir imagen</a></div>
+            <!--<div>{#{ form(form) }#}</div>-->
+            {{ form_rest(form) }}
+            <div><input type="submit" value="Registrar producto"></div>
+        </form>
+    </div>
+{% endblock %}

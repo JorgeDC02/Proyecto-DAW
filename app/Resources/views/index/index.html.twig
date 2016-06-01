@@ -1,0 +1,64 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <div class="row carrussel">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <h4>M&aacute;s comentado</h4>
+                    {{ render(controller('AppBundle:Comentario:masComentado')) }}
+                    <!--<img src="images/logo-smartphone.png" alt="Chania" height="345">-->
+                </div>
+
+                <div class="item">
+                    <h4>Mejor valorado</h4>
+                    {{ render(controller('AppBundle:Producto:masVotado')) }}
+                    <!--<img src="images/logo-smartphone.png" alt="Chania" height="345">-->
+                </div>
+
+                <div class="item">
+                    <h4>Más comprado</h4>
+                    {{ render(controller('AppBundle:CarritoCopia:masComprado')) }}
+                    <!--<img src="images/logo-smartphone.png" alt="Flower" height="345">-->
+                </div>
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="row fila">
+        <div class="col-sm-6 caja1">
+            <!--Bloque novedades-->
+            {% block div %}{% endblock %}
+        </div>
+
+        <div class="col-sm-6 caja2">
+            <!--Bloque promociones-->
+            {{  render(controller('AppBundle:Index:portadaPromocion')) }}
+            {#% render "AppBundle:Index:portadaPromocion" %#}
+        </div>
+
+        <div class="col-sm-6 caja3">
+            {{  render(controller('AppBundle:Index:portadaIntersante')) }}
+        </div>
+    </div>
+{% endblock %}

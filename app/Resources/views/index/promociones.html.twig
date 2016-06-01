@@ -1,0 +1,32 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    <div class="row">
+        <h4 class="titulo-noveda">Promociones</h4>
+    </div>
+
+
+    {% for producto in productos %}
+        <div class="row estilo-contenido-novedades">
+            <div class="col-sm-4" align="center">
+                <h5><a href="{{ path('app_producto_especificacion', {'id' : producto.id}) }}"> {{ producto.nMarca }}{{ producto.modelo }}</a></h5>
+                <img src="/images/upload/{{ producto.imageName }}" class="img-pg-novedad">
+            </div>
+
+            <div class="col-sm-4 nov-cont-desc">
+                <p>{{ producto.descripcion }}</p>
+                <p>Descuento de -<span class="descuentopromo">{{ producto.descuentoPorc }}</span>%</p>
+                <p>Antes <span class="preciopromo">{{ producto.precio }}</span>&euro;</p>
+                <p>Ahora <span class="precioFinalPromocion2"></span></p>
+            </div>
+
+            <div class="col-sm-4 nov-cont-comp" align="center">
+                <a href="{{ path('app_carrito_comprar') }}"><button type="button" class="btn btn-info">Comprar</button></a>
+                <a href="{{ path('app_carrito_insertar', {'id': producto.id}) }}">
+                    <input type="button" class="btn btn-primary" value="A&ntilde;adir al carrito">
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+    <!--<div class="col-sm-2 estilo-filtro">Filtrar búsqueda</div>-->
+
+{% endblock %}

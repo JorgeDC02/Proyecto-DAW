@@ -1,0 +1,31 @@
+{% extends ':index/empleado:index.html.twig' %}
+
+{% block div %}
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Id</th><th>Nombre de usuario</th><th>email</th><th>Fecha de registro</th><th>Ultimo inicio de session</th><th>Editar usuario</th>
+        </tr>
+        </thead>
+        <tbody align="center">
+        {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.username }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.createdAt|date('d/m/y') }}</td>
+                <td>{{ usuario.lastLogin|date('d/m/y') }}</td>
+                <td><a href="{{ path('app_usuario_delete', {'id': usuario.id}) }}">Eliminar</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+    <!--<div style="margin-top:10px">
+        <a href="{#{ path('app_usuario_insert') }#}">A?adir usuario</a>
+    </div>-->
+
+
+
+{% endblock %}

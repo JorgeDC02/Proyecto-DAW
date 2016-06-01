@@ -1,0 +1,14 @@
+
+<div class="row" align="center">
+    <h4>Comentarios</h4>
+</div>
+{% for comm in comentarios %}
+    <!--<p>Nombre de usuario:{#{ comm.usuario.username }#} </p>-->
+    <div class="row fila-comment">
+
+    <p>Por {{ comm.username }} el {{ comm.createdAt |date("d/m/y") }} a las {{ comm.createdAt |date("h:i:s") }} </p>
+    <p class="commentUser">{{ comm.comentario }} </p>
+    </div>
+
+{% endfor %}
+

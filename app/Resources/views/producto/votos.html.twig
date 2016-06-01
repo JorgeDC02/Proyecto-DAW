@@ -1,0 +1,5 @@
+{% if is_granted('ROLE_USER') %}
+{{ form(form) }}
+{% else %}
+    <p><a href=""> Inicia sesion para votar</a></p>
+{% endif %}

@@ -1,0 +1,30 @@
+
+
+
+    <h4 class="titulo-portadas">Promociones</h4>
+
+    {% for promo in promocion %}
+        <div class="row">
+            <!--<div class="col-md-6">-->
+                <div class="row">
+                   <a href="{{ path('app_producto_especificacion', {'id' : promo.id}) }}"> {{ promo.tipoProducto }} {{ promo.modelo }}</a>
+                </div>
+                <div class="col-xs-6 img-promocion">
+                    <img src="/images/upload/{{ promo.imageName }}"/>
+                </div>
+
+
+            <!--</div>-->
+
+            <div class="col-xs-6 precioPromocionPortada">
+                <div class="row">Descuento de -<span class="descuentoPortada">{{ promo.descuentoPorc }}</span>%</div>
+                <div class="row precioOldPromocion">
+                    <span class="precioUnderline">{{ promo.precio }}&euro;</span>  <span class="precioFinalPromocion"></span>
+                </div>
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+    <div class="row"><p><a href="{{ path('app_lista_promociones') }}">Ver todas las promociones</a> </p></div>

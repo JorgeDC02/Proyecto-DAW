@@ -1,0 +1,49 @@
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+
+app.index:
+    resource: "@AppBundle/Controller/IndexController.php"
+    type: annotation
+
+app.departamento:
+    #path: /departamento
+    #defaults: {_controller: AppBundle:Departamento:index}
+    resource: "@AppBundle/Controller/DepartamentoController.php"
+    type: annotation
+
+app.marcas:
+ resource: "@AppBundle/Controller/MarcaController.php"
+ type: annotation
+
+app.producto:
+  resource: "@AppBundle/Controller/ProductoController.php"
+  type: annotation
+
+app.novedades:
+ resource: "@UserBundle/Controller/NovedadesController.php"
+ type: annotation
+
+app.promociones:
+ resource: "@AppBundle/Controller/PromocionController.php"
+ type: annotation
+
+app.comentario:
+   resource: "@AppBundle/Controller/ComentarioController.php"
+   type: annotation
+
+app.carrito:
+  resource: "@AppBundle/Controller/CarritoController.php"
+  type: annotation
+
+app.usuarios:
+  resource: "@UserBundle/Controller/IndexController.php"
+  type: annotation
+
+app.caritoCopia:
+  resource: "@AppBundle/Controller/CarritoCopiaController.php"
+  type: annotation
+
+#AcmeHomeBundle_ajax_update_mydata:
+ # pattern:  /update/data/from/ajax/call
+  #defaults: { _controller: AcmeHomeBundle:MyAjax:updateData }
+

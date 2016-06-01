@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+<div class="row fila-spf-prod">
+    {% for producto in productos %}
+    <div class="col-md-8">
+
+        <div class="row">
+            <div class="col-sm-8">
+
+
+
+                <div class="col-xs-3 espf-cont-img">
+                    <p class="imagenEspecificacionMin"><img src="/images/upload/{{ producto.imageName }}"/></p>
+                    <p class="imagenEspecificacionMin"><img src="/images/upload/noDisponible.jpg"/></p>
+                    <!--<p>Imagen 3</p>-->
+                </div>
+
+                <div class="col-xs-9" align="center">
+                    <p class="imagenEspecificacion"><img src="/images/upload/{{ producto.imageName }}"/></p>
+                </div>
+
+            </div>
+
+
+        <div class="col-md-4">
+            <p>{{ producto.tipoProducto}} {{ producto.nMarca }} {{ producto.modelo}}</p>
+            <p>Valoracion del producto <br> {{ producto.valoracion }}
+                {{ render(controller('AppBundle:Producto:votarProducto', {'id': producto.id})) }}</p>
+            <p>{{ producto.descripcion }}</p>
+            <p>{{ producto.precio }}&euro;</p>
+            <p>
+                <a href="{{ path('app_compra_producto', {'id': producto.id}) }}"><button type="button" class="btn btn-info">Comprar</button></a>
+                <a href="{{ path('app_carrito_insertar', {'id': producto.id}) }}">
+                    <input type="button" class="btn btn-primary" value="A&ntilde;adir al carrito">
+                </a></p>
+        </div>
+
+        </div>
+    </div>
+
+        <div class="col-md-4 col-detalles-producto">
+            {#{ render(controller('AppBundle:Comentario:index')) }#}
+            {#{ render(controller('AppBundle:Comentario:index', {'id': 2})) }#}<!--Muestra los comentarios con id 2 //Muestra dos veces el mismo valor-->
+            {{ render(controller('AppBundle:Comentario:index', {'id': producto.id})) }}
+            {{ render(controller('AppBundle:Comentario:insertarComentario', {'id': producto.id})) }}
+        </div>
+    {% endfor %}
+
+
+
+</div>
+{% endblock %}

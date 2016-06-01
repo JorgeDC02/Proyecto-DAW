@@ -1,0 +1,23 @@
+{% extends ':index/empleado:index.html.twig' %}
+{% block div %}
+    <div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Id</th><th>Marca</th>
+        </tr>
+        </thead>
+        <tbody align="center">
+        {% for marca in marcas %}
+            <tr>
+                <td>{{ marca.id }}</td>
+                <td>{{ marca.nMarca }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <div>
+        <a href="{{ path('app_marca_insertar') }}">Añadir marca</a>
+    </div>
+{% endblock %}

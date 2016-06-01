@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<div class="row">
+    <h4 class="titulo-noveda">Telefon&iacute;a</h4>
+</div>
+
+        {% for prod in productos %}
+<div class="row cont-listado">
+
+
+        <div class="col-sm-7" align="center">
+            <div class="row">
+
+                <div class="col-sm-4">
+                    <p><a href="{{ path('app_producto_especificacion', {'id' : prod.id}) }}"> {{ prod.nMarca }} {{ prod.modelo }}</a></p>
+                    <p><img src="/images/upload/{{ prod.imageName }}" class="imagen-listado"></p>
+                </div>
+
+                <div class="col-sm-4 col-descr">
+                    <p>{{ prod.descripcion }}</p>
+                    <p>{{ prod.precio }}</p>
+                </div>
+
+                <div class="col-sm-4 col-precio">
+                    <p>
+                        <a href="{{ path('app_carrito_insertar', {'id': prod.id}) }}">
+                            <input type="button" class="btn btn-primary" value="A&ntilde;adir al carrito">
+                        </a>
+                    </p>
+                    <p>
+                        <a href="{{ path('app_compra_producto', {'id': prod.id}) }}">
+                            <button type="button" class="btn btn-info">Comprar</button>
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-5 col-comentario">
+            {{ render(controller('AppBundle:Comentario:index', {'id': prod.id})) }}
+        </div>
+
+</div>
+        {% endfor %}
+
+{% endblock %}
